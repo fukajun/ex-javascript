@@ -1,0 +1,32 @@
+{
+  "name": "flammox_tuto",
+  "version": "1.0.0",
+  "description": "dummy",
+  "repository": "dummy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "formsy-react": "^0.14.1",
+    "lodash": "^3.9.3",
+    "react": "^0.13.3",
+    "react-mixin": "^1.7.0",
+    "react-redux": "^1.0.0-alpha",
+    "redux": "^1.0.0-rc",
+    "react-datepicker": "^0.8.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^2.7.13",
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "node-notifier": "^4.2.3",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
