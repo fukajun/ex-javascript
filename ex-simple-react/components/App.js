@@ -22,7 +22,7 @@ export class App extends React.Component{
         <span>{this.state.counter}</span>
         <br />
         <input type='text' onChange={this.change}  value={this.state.counter} />
-        <input type='button' value='Add' onClick={this.incrementCounter.bind(this)}/>
+        <input type='button' value='Add' onClick={::this.incrementCounter}/>
         </section>
         </div>
     )

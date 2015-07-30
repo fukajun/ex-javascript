@@ -26,7 +26,8 @@ gulp.task('browser-sync',function(){
 
 gulp.task('build', function() {
   return browserify({ entries: ['./index.js'] })
-  .transform(babelify).bundle()
+  .transform(babelify.configure({ stage: 0 }))
+  .bundle()
   .on('error', errorHandler)
   .pipe(plumber({errorHandler: errorHandler}))
   .pipe(source('bundle.js'))
