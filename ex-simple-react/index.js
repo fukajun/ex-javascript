@@ -1,9 +1,6 @@
 import React from 'react'
 import { App } from './components/App'
-
 React.render(
-  <div>
-    <App />
-  </div>,
+  <App count={100}/>,
   document.getElementById('target')
 )
