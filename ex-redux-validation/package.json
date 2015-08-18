@@ -13,6 +13,8 @@
     "immutable": "^3.7.4",
     "lodash": "^3.9.3",
     "react": "^0.13.3",
+    "react-redux": "^0.9.0",
+    "redux": "^1.0.1",
     "validator": "^4.0.0"
   },
   "devDependencies": {
