@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Immutable from 'immutable'
 import { connect } from 'react-redux'
-import { INPUT } from '../constants/actionType'
+import { INPUT, SUCCESS, FAILURE } from '../constants/actionType'
 
 // Action & ActionCreator
 function input(name, value) {
@@ -10,6 +10,17 @@ function input(name, value) {
     type: INPUT,
     name,
     value
+  }
+}
+function register(data) {
+  if((data.first + data.last) == 'junpayfukaya') {
+    return {
+      type: FAILURE,
+      errors: { all: 'duplicate!' }
+    }
+  }
+  return {
+    type: SUCCESS
   }
 }
 
@@ -20,21 +31,30 @@ export class App extends React.Component{
   }
 
   errorMessage(name) {
-    var { error } = this.props
-    return error[name]
+    var { error, response } = this.props
+    let message = ''
+    if(error[name]) message    += error[name]
+    if(response[name]) message += response[name]
+    return message
   }
 
   change(e) {
     const { dispatch } = this.props
     dispatch(input(e.target.name, e.target.value))
   }
+
+  submit() {
+    const { dispatch, main } = this.props
+    dispatch(register(main))
+  }
+
   isValid(errros) {
     const {  error: error } = this.props
     return Object.keys(error).length == 0
   }
 
   render() {
-    const { main: { first: first, last: last }, error: { error: error } } = this.props
+    const { response: response, main: { first: first, last: last }, error: { error: error } } = this.props
 
     return (
       <div>
@@ -49,7 +69,7 @@ export class App extends React.Component{
         <span>{this.errorMessage('last')}</span><br/>
 
         <br/>
-        <input type='submit' disabled={!this.isValid()}/><br />
+        <input type='submit' disabled={!this.isValid()} onClick={::this.submit}/><br />
       </div>
     )
   }
