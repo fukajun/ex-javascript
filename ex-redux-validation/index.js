@@ -48,8 +48,8 @@ function combine(state, action) {
     default:
       let main = mainReducer(state.main, action)
       let error = checkError(main, action)
-      let response = checkResponse(state.response, action)
-      return { main, error, response }
+      let errMessage = checkResponse(state.response, action)
+      return { main, error, response: errMessage }
   }
 }
 

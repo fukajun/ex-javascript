@@ -13,10 +13,14 @@ function input(name, value) {
   }
 }
 function register(data) {
+  //
+  // ajax
+  //
+  var response =   { all: 'duplicate!' } // response
   if((data.first + data.last) == 'junpayfukaya') {
     return {
       type: FAILURE,
-      errors: { all: 'duplicate!' }
+      errors: response
     }
   }
   return {
