@@ -1,0 +1,20 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <ul id='app'>
+      <input type='text' v-model='searchText' ></input>
+      <section>
+      <span> A </span>
+      <li v-repeat="list | filterBy searchText in 'key'" v-text='name'></li>
+      </section>
+
+      <section>
+      <span> B </span>
+      <li v-repeat="list | filterBy searchText" v-text='name'></li>
+      </section>
+    </ul>
+    <script src='build/bundle.js' type='text/javascript'></script>
+  </body>
+<html>
+

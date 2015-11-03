@@ -1,0 +1,24 @@
+{
+  "name": "ex-vue-filter",
+  "version": "1.0.0",
+  "description": "try vue js filter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fukajun",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browser-sync": "^2.9.11",
+    "browserify": "^11.2.0",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "node-notifier": "^4.3.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "vue": "^0.12.16"
+  }
+}
